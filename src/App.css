@@ -13,10 +13,8 @@
 }
 
 .resultsWrapper {
-  display: grid;
-  width:400px;
+  display: grid; 
   justify-content: left;
-  padding-left: 1rem;
   padding-top: 2rem;
 }
 
@@ -41,23 +39,41 @@
 }
 
 
+.inputBoxRemainingDate {
+  display: flex;  
+  background-color: cornflowerblue;
+  font-size: 30px;
+  color: yellow;
+  margin-left: 10px;
+  padding: 10px 8px 4px 8px;
+  border: none;
+  outline: none; 
+}
 
 .duration {
-  padding-top:5rem;
-  margin-left: 1.6rem;
+  padding-top:3.5rem;
+  padding-left:1.8rem;
   background-color: cornflowerblue;
   font-size: 34px;
   color: white;
 }
 
 .remaining {
-  padding-top:5rem;
-  margin-left: 1rem;
+  padding-top:1.2rem; 
+  padding-left:1rem;
   background-color: cornflowerblue;
   font-size: 34px;
   color: white;
 }
 
+
+.remainingDate {
+  padding-top:1.2rem;
+  padding-left:1rem;
+  background-color: cornflowerblue;
+  font-size: 34px;
+  color: white;
+}
 
 .inputBox::selection {
   font-size: 34px;
@@ -68,6 +84,7 @@
 }
 .calendarWrap {
   padding-top:80px;
+  max-width:80%;
   margin:0;
   display:flex;
   justify-content:space-evenly;

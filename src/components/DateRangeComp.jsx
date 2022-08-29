@@ -5,6 +5,7 @@ import { Calendar, DateRange } from 'react-date-range'
 import 'react-date-range/dist/styles.css'
 import 'react-date-range/dist/theme/default.css'
 import { addDays } from 'date-fns/esm'
+import { add } from 'date-fns'
 import { differenceInDays } from 'date-fns'
 
 const DateRangeComp = () => {
@@ -62,7 +63,7 @@ const [range, setRange] = useState([
             moveRangeOnFirstSelection={false}
             ranges={range}
             months={2}
-            minDate={addDays(new Date(), -90)}
+            // minDate={addDays(new Date(), 1)}
             maxDate={addDays(new Date(), 92)}
             direction="horizontal"
             // scroll={{ enabled: true }}
@@ -100,9 +101,48 @@ const [range, setRange] = useState([
                         className="inputBoxRemaining"      
                         />   
                      </div>     
-                    </div>
-                </div>
+                   
+                    <div class="remainingDate">Last Day to Stay</div>
+                     <div>
+                        <input
+                        // value= {` ${format(range[0].startDate, "MM/dd/yyyy")} `}
+                        // value= {` ${formatDistanceStrict(new Date(2014, 6, 2), new Date(2015, 0, 2))} `}
+                        //BELOW WORKS
+                        // value= {` ${formatDistanceStrict(range[0].startDate, range[0].endDate)} `}
+                        // value= {` ${add(range[0].startDate(0, 0, 0, 90, 0, 0, 0)) } `}  
+                            // value= {` ${ add(range[0].startDate(), 
+                            //     {
+                            //         years: 0,
+                            //         months: 0,
+                            //         weeks: 0,
+                            //         days: 89,
+                            //         hours: 0,
+                            //         minutes: 0,
+                            //         seconds: 0,
+                            //     })
+                            // })  `}  
 
+                        value= {` ${add((range[0].startDate), {
+                            years: 0,
+                            months: 0,
+                            weeks: 0,
+                            days: 89,
+                            hours: 0,
+                            minutes: 0,
+                            seconds: 0,
+                          })
+                        })  `}  
+
+                        // value= {` ${"Hello"} `}         
+                        size="12"
+                        readOnly
+                        className="inputBoxRemainingDate"      
+                        />   
+                     </div>     
+                    </div>
+                   
+             
+            </div>
     )
 }
 
