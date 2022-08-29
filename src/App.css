@@ -1,6 +1,88 @@
 .App {
   text-align: center;
 }
+:root {
+  background-color: cornflowerblue; 
+  
+}
+.input.inputBox {
+  font-size: 44px;
+  padding: 5px 8px 4px 8px;
+  border-radius: 3px;
+  border: 1px solid #666;
+}
+
+.resultsWrapper {
+  display: grid;
+  width:400px;
+  justify-content: left;
+  padding-left: 1rem;
+  padding-top: 2rem;
+}
+
+.inputBox {
+  display: flex;  
+  background-color: cornflowerblue;
+  font-size: 54px;
+  color: white;
+  padding: 5px 8px 4px 8px;
+  border: none;
+  outline: none; 
+}
+
+.inputBoxRemaining {
+  display: flex;  
+  background-color: cornflowerblue;
+  font-size: 54px;
+  color: yellow;
+  padding: 5px 8px 4px 8px;
+  border: none;
+  outline: none; 
+}
+
+
+
+.duration {
+  padding-top:5rem;
+  margin-left: 1.6rem;
+  background-color: cornflowerblue;
+  font-size: 34px;
+  color: white;
+}
+
+.remaining {
+  padding-top:5rem;
+  margin-left: 1rem;
+  background-color: cornflowerblue;
+  font-size: 34px;
+  color: white;
+}
+
+
+.inputBox::selection {
+  font-size: 34px;
+  padding: 5px 8px 4px 8px;
+  border-radius: 3px;
+  border: 0px solid #666;
+  
+}
+.calendarWrap {
+  padding-top:80px;
+  margin:0;
+  display:flex;
+  justify-content:space-evenly;
+  position: relative;
+}
+
+.calendarElement {
+  position: relative;
+  margin-left:9rem;
+  top: 80px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  z-index: 999;
+  box-shadow: 0px 0px 20px 20px rgba(39, 24, 24, 0.12);
+}
 
 .App-logo {
   height: 40vmin;
@@ -35,4 +117,10 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.rdrDateDisplayWrapper {
+  background-color: rgb(239, 242, 247);
+  border-radius: 8px;
+  
 }
