@@ -19,7 +19,8 @@
 }
 
 .inputBox {
-  display: flex;  
+  display: flex;
+  margin-left:115px;
   background-color: cornflowerblue;
   font-size: 54px;
   color: white;
@@ -29,9 +30,10 @@
 }
 
 .inputBoxRemaining {
-  display: flex;  
+  display: flex;
+  margin-left:125px;
   background-color: cornflowerblue;
-  font-size: 54px;
+  font-size: 44px;
   color: yellow;
   padding: 5px 8px 4px 8px;
   border: none;
@@ -39,20 +41,21 @@
 }
 
 
+
 .inputBoxRemainingDate {
-  display: flex;  
+
+  margin-left:135px;
   background-color: cornflowerblue;
   font-size: 30px;
   color: yellow;
-  margin-left: 10px;
-  padding: 10px 8px 4px 8px;
+  padding: 10px 8px 40px 8px;
   border: none;
   outline: none; 
 }
 
 .duration {
   padding-top:3.5rem;
-  padding-left:1.8rem;
+  padding-left:1rem;
   background-color: cornflowerblue;
   font-size: 34px;
   color: white;
@@ -60,7 +63,7 @@
 
 .remaining {
   padding-top:1.2rem; 
-  padding-left:1rem;
+  padding-left:.5rem;
   background-color: cornflowerblue;
   font-size: 34px;
   color: white;
@@ -69,7 +72,7 @@
 
 .remainingDate {
   padding-top:1.2rem;
-  padding-left:1rem;
+  padding-left:.5rem;
   background-color: cornflowerblue;
   font-size: 34px;
   color: white;

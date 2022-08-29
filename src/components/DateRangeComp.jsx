@@ -1,7 +1,6 @@
-import { useEffect, useRef, useState } from 'react'
-import { Calendar, DateRange } from 'react-date-range'
-// import format from 'date-fns/format'
-// import { formatDistanceStrict }  from 'date-fns'
+import { useState } from 'react'
+import { DateRange } from 'react-date-range'
+import format from 'date-fns/format'
 import 'react-date-range/dist/styles.css'
 import 'react-date-range/dist/theme/default.css'
 import { addDays } from 'date-fns/esm'
@@ -19,41 +18,7 @@ const [range, setRange] = useState([
     }
 ])
 
-    // open close
-// const [open, setOpen] = useState(true)
 
-    // get the target element to toggle
-
-// const refOne = useRef(null)
-
-// useEffect(() => {
-//     // set current date on component load
-//     // setCalendar(format(new Date(), 'MM/dd/yyyy'))
-//     document.addEventListener("keydown", hideOnEscape, true)
-//     document.addEventListener("click", hideOnClickOutside, true)
-// }, [])
-
-// const hideOnEscape = (e) => {
-//     if(e.key === "Escape") {
-//         setOpen(false)
-//     }
-// }
-
-// const hideOnClickOutside = (e) => {
-//     // console.log(refOne.current)
-//     // console.log(e.target)
-//     if( refOne.current && !refOne.current.contains(e.target)) {
-//         setOpen(false)
-//     }
-// }
-
-
-        // on date change, stre date in state
-        // const handleSelect = (date) => {
-        // console.log(date)
-        // console.log(format(date, 'MM/dd/yyyy'))
-        //setCalendar(format(date, 'MM/dd/yyyy'))
-        // }
     return (
         <div className="calendarWrap">
          <div >           
@@ -67,13 +32,12 @@ const [range, setRange] = useState([
             maxDate={addDays(new Date(), 92)}
             direction="horizontal"
             // scroll={{ enabled: true }}
-            className="calendarElement"
-            
+            className="calendarElement"           
             />
             
             </div>
             <div class="resultsWrapper">
-                    <div class="duration">Duration Of Stay </div>
+                    <div class="duration">Duration Of Stay</div>
                     <div>
                         <input
                         // value= {` ${format(range[0].startDate, "MM/dd/yyyy")} `}
@@ -84,8 +48,7 @@ const [range, setRange] = useState([
                         size="4"
                         readOnly
                         className="inputBox"      
-                        />   
-                       
+                        />                         
                     </div>        
             
                     <div class="remaining">Days Remaining</div>
@@ -101,28 +64,11 @@ const [range, setRange] = useState([
                         className="inputBoxRemaining"      
                         />   
                      </div>     
-                   
-                    <div class="remainingDate">Last Day to Stay</div>
-                     <div>
-                        <input
-                        // value= {` ${format(range[0].startDate, "MM/dd/yyyy")} `}
-                        // value= {` ${formatDistanceStrict(new Date(2014, 6, 2), new Date(2015, 0, 2))} `}
-                        //BELOW WORKS
-                        // value= {` ${formatDistanceStrict(range[0].startDate, range[0].endDate)} `}
-                        // value= {` ${add(range[0].startDate(0, 0, 0, 90, 0, 0, 0)) } `}  
-                            // value= {` ${ add(range[0].startDate(), 
-                            //     {
-                            //         years: 0,
-                            //         months: 0,
-                            //         weeks: 0,
-                            //         days: 89,
-                            //         hours: 0,
-                            //         minutes: 0,
-                            //         seconds: 0,
-                            //     })
-                            // })  `}  
 
-                        value= {` ${add((range[0].startDate), {
+                    <div class="remainingDate">Last Day to Stay</div>
+                    
+                        <input                     
+                        value= {format(add((range[0].startDate), {
                             years: 0,
                             months: 0,
                             weeks: 0,
@@ -130,18 +76,15 @@ const [range, setRange] = useState([
                             hours: 0,
                             minutes: 0,
                             seconds: 0,
-                          })
-                        })  `}  
+                          }), "dd MMMM yyyy"   )}
 
                         // value= {` ${"Hello"} `}         
-                        size="12"
+                        size="20"
                         readOnly
                         className="inputBoxRemainingDate"      
                         />   
-                     </div>     
-                    </div>
-                   
-             
+                       
+                    </div>             
             </div>
     )
 }
