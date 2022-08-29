@@ -1,16 +1,13 @@
 import { useEffect, useRef, useState } from 'react'
 import { Calendar, DateRange } from 'react-date-range'
-import format from 'date-fns/format'
-import { formatDistanceStrict }  from 'date-fns'
+// import format from 'date-fns/format'
+// import { formatDistanceStrict }  from 'date-fns'
 import 'react-date-range/dist/styles.css'
 import 'react-date-range/dist/theme/default.css'
 import { addDays } from 'date-fns/esm'
 import { differenceInDays } from 'date-fns'
 
-
-
 const DateRangeComp = () => {
-
 
     // Date State
 const [range, setRange] = useState([
@@ -22,7 +19,7 @@ const [range, setRange] = useState([
 ])
 
     // open close
-const [open, setOpen] = useState(true)
+// const [open, setOpen] = useState(true)
 
     // get the target element to toggle
 
@@ -66,7 +63,7 @@ const [open, setOpen] = useState(true)
             ranges={range}
             months={2}
             minDate={addDays(new Date(), -90)}
-             maxDate={addDays(new Date(), 93)}
+             maxDate={addDays(new Date(), 90)}
             direction="horizontal"
             // scroll={{ enabled: true }}
             className="calendarElement"
@@ -82,7 +79,7 @@ const [open, setOpen] = useState(true)
                         // value= {` ${formatDistanceStrict(new Date(2014, 6, 2), new Date(2015, 0, 2))} `}
                         //BELOW WORKS
                         // value= {` ${formatDistanceStrict(range[0].startDate, range[0].endDate)} `}
-                        value= {` ${differenceInDays(range[0].endDate, range[0].startDate) + " days"} `}          
+                        value= {` ${differenceInDays(range[0].endDate, range[0].startDate) + 1 + " days"} `}          
                         size="4"
                         readOnly
                         className="inputBox"      
@@ -97,7 +94,7 @@ const [open, setOpen] = useState(true)
                         // value= {` ${formatDistanceStrict(new Date(2014, 6, 2), new Date(2015, 0, 2))} `}
                         //BELOW WORKS
                         // value= {` ${formatDistanceStrict(range[0].startDate, range[0].endDate)} `}
-                        value= {` ${(Math.abs(differenceInDays(range[0].endDate, range[0].startDate) -90))} `}          
+                        value= {` ${(Math.abs(differenceInDays(range[0].endDate, range[0].startDate) -89))} `}          
                         size="1"
                         readOnly
                         className="inputBoxRemaining"      
